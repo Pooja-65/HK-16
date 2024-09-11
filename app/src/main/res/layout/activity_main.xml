@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/weatherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#49CEDF"
+        android:drawableTop="@android:drawable/ic_dialog_map"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Weather Alerts"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+</RelativeLayout>
