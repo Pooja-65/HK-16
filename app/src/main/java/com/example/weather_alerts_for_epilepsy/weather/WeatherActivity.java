@@ -22,6 +22,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,7 +40,8 @@ import retrofit2.Callback;
 public class WeatherActivity extends AppCompatActivity {
 
     private TextView conditionTextView, dateTimeTextView, tempTextView, locationTextView, regionTextView;
-    private TextView rainTextView, windSpeedTextView, humidityTextView;
+    private TextView aqiStatusTextView;
+    private TextView uvTextView, windSpeedTextView, humidityTextView;
     private ImageView weatherImageView;
     private RecyclerView forecastRecyclerView;
     private WeatherForecastAdapter forecastAdapter;
@@ -56,11 +58,12 @@ public class WeatherActivity extends AppCompatActivity {
         tempTextView = findViewById(R.id.textView3);
         locationTextView = findViewById(R.id.textView4);
         regionTextView = findViewById(R.id.textView12);
-        rainTextView = findViewById(R.id.textView5);
+        uvTextView = findViewById(R.id.textView5);
         windSpeedTextView = findViewById(R.id.textView7);
         humidityTextView = findViewById(R.id.textView9);
         weatherImageView = findViewById(R.id.imageView);
         forecastRecyclerView = findViewById(R.id.recyclerViewForecast); // Updated ID
+        aqiStatusTextView = findViewById(R.id.textView14); // Initialize AQI TextView
 
         // Setup RecyclerView
         forecastRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -74,7 +77,7 @@ public class WeatherActivity extends AppCompatActivity {
         requestLocationPermissions();
     }
 
-    //Request Location Permissions
+    // Request Location Permissions
     private void requestLocationPermissions() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -83,7 +86,7 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
-    //Fetch the current GPS coordinates
+    // Fetch the current GPS coordinates
     private void fetchCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.getLastLocation()
@@ -103,7 +106,7 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
-    // Step 4: Handle the result of location permission request
+    // Handle the result of location permission request
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -122,7 +125,7 @@ public class WeatherActivity extends AppCompatActivity {
     private void fetchWeatherData(double lat, double lon) {
         WeatherApiService apiService = RetrofitClient.getClient().create(WeatherApiService.class);
 
-        String apiKey = "ca24e06c2bd64238b1d121239240809";
+        String apiKey = "ca24e06c2bd64238b1d121239240809";  // WeatherAPI key
         String location = lat + "," + lon;
 
         // Fetch current weather
@@ -133,6 +136,8 @@ public class WeatherActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     WeatherResponse weather = response.body();
                     updateCurrentWeatherUI(weather);
+                    fetchAirQuality(lat, lon); // Fetch air quality after getting weather data
+                    fetchWeatherAlerts(lat, lon);
                 }
             }
 
@@ -178,16 +183,14 @@ public class WeatherActivity extends AppCompatActivity {
         String iconUrl = "https:" + weather.current.condition.icon;
         Glide.with(this).load(iconUrl).into(weatherImageView);
 
-        // Fetch and update rain, wind speed, and humidity
+        // Fetch and update UV index, wind speed, and humidity
         fetchAdditionalData(weather.location.lat, weather.location.lon);
-        Log.d("WeatherActivity","latitude"+weather.location.lat);
-        Log.d("WeatherActivity","longitude"+weather.location.lon);
     }
 
-    // Fetch additional weather data (rain, wind speed, humidity)
+    // Fetch additional weather data (UV index, wind speed, humidity)
     private void fetchAdditionalData(double lat, double lon) {
-        String apiKey = "9824e39035f7721658880646da8a29f6";  // OpenWeatherMap API key
-        String url = String.format("https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=%s", lat, lon, apiKey);
+        String apiKey = "ca24e06c2bd64238b1d121239240809";  // WeatherAPI key
+        String url = String.format("https://api.weatherapi.com/v1/current.json?key=%s&q=%f,%f", apiKey, lat, lon);
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
@@ -204,29 +207,137 @@ public class WeatherActivity extends AppCompatActivity {
                     String responseData = response.body().string();
                     try {
                         JSONObject jsonObject = new JSONObject(responseData);
-                        JSONObject main = jsonObject.getJSONObject("main");
-                        JSONObject rain = jsonObject.optJSONObject("rain");
-                        double windSpeed = jsonObject.getJSONObject("wind").getDouble("speed");
-                        double humidity = main.getDouble("humidity");
-
-                        double rainPercentage = (rain != null) ? rain.optDouble("1h", 0.0) : 0.0;
+                        JSONObject current = jsonObject.getJSONObject("current");
+                        double uvIndex = current.getDouble("uv");  // Fetch UV index
+                        double windSpeed = current.getDouble("wind_kph");
+                        double humidity = current.getDouble("humidity");
 
                         runOnUiThread(() -> {
-                            if (rain != null) {
-                                rainTextView.setText(String.format("%.1f%%", rainPercentage));
-                            } else {
-                                rainTextView.setText("No rain reported");
-                            }
-                            windSpeedTextView.setText(String.format("%.1f km/h", windSpeed * 3.6));  // Convert m/s to km/h
+                            uvTextView.setText(String.format("%.1f", uvIndex));  // Display UV index
+                            windSpeedTextView.setText(String.format("%.1f km/h", windSpeed));
                             humidityTextView.setText(String.format("%.1f%%", humidity));
                         });
-                        Log.d("WeatherActivity", responseData);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
             }
         });
-
     }
+
+    // Fetch air quality data
+    private void fetchAirQuality(double lat, double lon) {
+        String apiKey = "9824e39035f7721658880646da8a29f6";  // OpenWeatherMap API key
+        String url = String.format("https://api.openweathermap.org/data/2.5/air_pollution?lat=%f&lon=%f&appid=%s", lat, lon, apiKey);
+
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(url).build();
+
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
+                e.printStackTrace();
+                Log.d("AQI", "Failed to fetch AQI: " + e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
+                if (response.isSuccessful() && response.body() != null) {
+                    String responseData = response.body().string();
+                    Log.d("AQI", "Response Data: " + responseData); // Log the response data to check what is received
+                    try {
+                        JSONObject jsonObject = new JSONObject(responseData);
+                        JSONArray listArray = jsonObject.getJSONArray("list");
+                        JSONObject firstEntry = listArray.getJSONObject(0);
+                        JSONObject main = firstEntry.getJSONObject("main");
+                        int aqiValue = main.getInt("aqi");
+
+                        // Map AQI value to a text status
+                        String aqiStatus;
+                        switch (aqiValue) {
+                            case 1:
+                                aqiStatus = "Good";
+                                break;
+                            case 2:
+                                aqiStatus = "Fair";
+                                break;
+                            case 3:
+                                aqiStatus = "Moderate";
+                                break;
+                            case 4:
+                                aqiStatus = "Poor";
+                                break;
+                            case 5:
+                                aqiStatus = "Very Poor";
+                                break;
+                            default:
+                                aqiStatus = "Unknown";
+                                break;
+                        }
+
+                        // Update UI on the main thread
+                        runOnUiThread(() -> aqiStatusTextView.setText(aqiStatus));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.d("AQI", "JSON parsing error: " + e.getMessage());
+                    }
+                } else {
+                    Log.d("AQI", "Unsuccessful response: " + response.message());
+                }
+            }
+        });
+    }
+    // Fetch weather alerts for the given latitude and longitude
+    private void fetchWeatherAlerts(double lat, double lon) {
+        String apiKey = "ca24e06c2bd64238b1d121239240809";  // OpenWeatherMap API key
+        String url = String.format("https://api.weatherapi.com/v1/forecast.json?key=%s&q=%f,%f&alerts=yes", apiKey, lat, lon);
+
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(url).build();
+
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
+                e.printStackTrace();
+                Log.d("WeatherAlert", "Failed to fetch weather alerts: " + e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
+                if (response.isSuccessful() && response.body() != null) {
+                    String responseData = response.body().string();
+                    Log.d("WeatherAlert", "Response Data: " + responseData); // Log the response data
+
+                    try {
+                        JSONObject jsonObject = new JSONObject(responseData);
+                        JSONArray alertsArray = jsonObject.optJSONArray("alerts");
+
+                        // Check if there are any alerts
+                        if (alertsArray != null && alertsArray.length() > 0) {
+                            JSONObject firstAlert = alertsArray.getJSONObject(0);
+                            String alertDescription = firstAlert.getString("description");
+
+                            // Update UI with the alert description on the main thread
+                            runOnUiThread(() -> {
+                                TextView alertTextView = findViewById(R.id.textView16);
+                                alertTextView.setText(alertDescription);
+                            });
+                        } else {
+                            // No alerts found, update UI with a default message
+                            runOnUiThread(() -> {
+                                TextView alertTextView = findViewById(R.id.textView16);
+                                alertTextView.setText("No weather alerts");
+                            });
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.d("WeatherAlert", "JSON parsing error: " + e.getMessage());
+                    }
+                } else {
+                    Log.d("WeatherAlert", "Unsuccessful response: " + response.message());
+                }
+            }
+        });
+    }
+
 }
