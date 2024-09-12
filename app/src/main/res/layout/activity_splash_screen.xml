@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Activities.SplashScreen.SplashScreen">
+
+    <ImageView
+        android:id="@+id/splashImageView"
+        android:layout_width="match_parent"
+        android:layout_height="462dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/splashelement" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/splashImageView1"
+        android:layout_marginTop="-431dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/s1" />
+
+    <TextView
+        android:id="@+id/animatedText"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lottieAnimationView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="-285dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="220dp"
+        android:fontFamily="@font/family"
+        android:textAlignment="center"
+        android:text="\u00A0Hii!..."
+        android:textColor="#FF5722"
+        android:textSize="48sp"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/splashImageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="431dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/splashelement1" />
+
+
+</RelativeLayout>

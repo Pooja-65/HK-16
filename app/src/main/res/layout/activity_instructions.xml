@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:background="#F5F5F5"
+    tools:context=".Activities.EpilepsyGuide.Instructions"
+    tools:ignore="ExtraText">
+    >
+
+        <!-- ListView to show instructions -->
+        <ListView
+            android:id="@+id/listViewInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/clearAllButton"
+            android:padding="8dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="16dp"
+            android:clipToPadding="false"
+            android:background="#FAFAFA"/>
+
+        <!-- Button to clear all steps -->
+        <Button
+            android:id="@+id/clearAllButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear All Steps"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#FF5C5C"
+            android:textColor="@android:color/white"
+            android:elevation="4dp"
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Floating Action Button to add a new instruction -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/add"
+            app:backgroundTint="#FFD75E"
+            android:contentDescription="Add Instruction" />
+
+</RelativeLayout>

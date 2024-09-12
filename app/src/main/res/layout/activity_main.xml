@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.calenderData.calender">
+
+  <TextView
+      android:id="@+id/text_choose_dates"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Choose dates in which seizure attacks occur"
+      android:textSize="18sp"
+      android:textColor="@android:color/black"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginTop="16dp"/>
+
+  <org.naishadhparmar.zcustomcalendar.CustomCalendar
+      android:id="@+id/custom_calendar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/text_choose_dates"
+      app:layout_constraintBottom_toTopOf="@id/text_seizure_legend"
+      app:layout_constraintVertical_bias="0.237"
+      tools:layout_editor_absoluteX="-16dp" />
+
+  <TextView
+      android:id="@+id/text_seizure_legend"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Red represents Seizure Attack \u2022"
+      android:textSize="18sp"
+      android:textColor="@color/colorPrimary"
+      app:layout_constraintTop_toBottomOf="@+id/custom_calendar"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginTop="16dp"/>
+
+  <ImageView
+      android:id="@+id/image_seizure_legend"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/image_doc"
+  app:layout_constraintTop_toBottomOf="@id/text_seizure_legend"
+  app:layout_constraintStart_toStartOf="parent"
+  app:layout_constraintEnd_toEndOf="parent"
+  android:layout_marginTop="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

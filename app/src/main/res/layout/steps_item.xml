@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/item_background"
+    android:elevation="24dp"
+    android:gravity="center_vertical">
+
+    <!-- Step Number TextView -->
+    <TextView
+        android:id="@+id/tvStepNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1:"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Instruction Content TextView -->
+    <TextView
+        android:id="@+id/tvInstructionContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="This is the instruction content"
+        android:textColor="#555555"
+        android:textSize="15sp"/>
+
+    <!-- Delete Icon -->
+    <ImageView
+        android:id="@+id/btnDeleteStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete"
+        android:contentDescription="Delete"
+        android:layout_marginStart="8dp"
+        app:tint="#FF5252" />
+</LinearLayout>

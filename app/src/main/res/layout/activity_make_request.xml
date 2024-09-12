@@ -1,0 +1,106 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.example.epinect.Activities.Post.MakeRequestActivity">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp">
+
+    <TextView
+        android:padding="18dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Share your Thoughts :)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_margin="8dp"
+        android:background="@drawable/border_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <EditText
+          android:id="@+id/message"
+          android:textSize="18sp"
+          android:minLines="6"
+          android:maxLines="10"
+          android:hint="Type your message here..."
+          android:padding="12dp"
+          android:cursorVisible="true"
+          android:background="@null"
+          android:textColorHint="@android:color/darker_gray"
+          android:gravity="top|start"
+          android:textColor="@android:color/black"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="16dp">
+
+      <ImageView
+          android:id="@+id/post_image"
+          android:layout_width="150dp"
+          android:layout_height="150dp"
+          android:padding="8dp"
+          android:layout_gravity="center"
+          app:srcCompat="@drawable/ic_image_black_24dp" />
+
+      <TextView
+          android:id="@+id/choose_text"
+          android:gravity="center"
+          android:text="@string/choose_image"
+          android:textStyle="bold"
+          android:textSize="20sp"
+          android:textColor="@android:color/black"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:text="Post Request"
+        android:textSize="20sp"
+        android:background="@drawable/button_bg"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_margin="24dp"
+        android:paddingVertical="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        android:progress="0"
+        style="?android:attr/progressBarStyleHorizontal"/>
+
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:text="0%"/>
+  </LinearLayout>
+</ScrollView>

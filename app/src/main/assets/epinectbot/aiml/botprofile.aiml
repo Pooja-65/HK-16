@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- insert your AIML categories here -->
+<category>
+    <pattern>hi</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>Hi</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>HI</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>HI *</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>Hi *</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>HI</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>hey</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>Hey</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>HEY</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>heyya</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>Heyya</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>Heyya *</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>heyya *</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>HEYYA *</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+<category>
+    <pattern>HELLO</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>Hello</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>hello</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+
+<category>
+    <pattern>hello *</pattern>
+    <template>Hi there! How can I help you today?</template>
+</category>
+  <category>
+      <pattern>Hello *</pattern>
+      <template>Hi there! How can I help you today?</template>
+    </category>
+
+<category>
+    <pattern>HELLO *</pattern>
+    <template>Hi there! How can I help you today?</template>
+  </category>
+
+
+
+  <category>
+    <pattern>what is your name</pattern>
+    <template>My name is EpiBot. Nice to meet you!</template>
+  </category>
+  <!-- Healthcare Related Categories -->
+  <category>
+    <pattern>what is diabetes</pattern>
+    <template>Diabetes is a medical condition that affects blood sugar levels. It's important to consult with a healthcare professional for personalized advice.</template>
+  </category>
+
+  <category>
+    <pattern>how to prevent cold</pattern>
+    <template>To prevent a cold, practice good hygiene by washing hands regularly, getting enough rest, and maintaining a healthy lifestyle.</template>
+  </category>
+
+  <category>
+    <pattern>symptoms of flu</pattern>
+    <template>Flu symptoms may include fever, cough, sore throat, body aches, and fatigue. It's advised to see a doctor if you experience these symptoms.</template>
+  </category>
+
+  <category>
+    <pattern>home remedies for headache</pattern>
+    <template>For a headache, try resting in a dark room, staying hydrated, and using a cold or warm compress. If persistent, seek medical advice.</template>
+  </category>
+
+  <category>
+    <pattern>what is asthma</pattern>
+    <template>Asthma is a chronic respiratory condition. It's crucial to follow prescribed medications and consult with a healthcare professional for proper management.</template>
+  </category>
+
+  <!-- Epilepsy Related Categories -->
+  <category>
+    <pattern>what is epilepsy</pattern>
+    <template>Epilepsy is a neurological disorder characterized by recurrent seizures. Consult a neurologist for a proper diagnosis and treatment plan.</template>
+  </category>
+
+  <category>
+    <pattern>how to help someone having a seizure</pattern>
+    <template>During a seizure, stay calm, keep the person safe, and place them on their side. Do not put anything in their mouth. Seek medical help if the seizure lasts more than five minutes.</template>
+  </category>
+
+  <category>
+    <pattern>managing epilepsy medication</pattern>
+    <template>Consistent medication is crucial for managing epilepsy. Follow your doctor's advice, take medications as prescribed, and report any side effects promptly.</template>
+  </category>
+ <category>
+    <pattern>quick healthy recipes</pattern>
+    <template>For a quick and healthy meal, try a salad with fresh veggies, grilled chicken, and a light dressing. It's both nutritious and easy to prepare.</template>
+  </category>
+  <category>
+    <pattern>causes of epilepsy</pattern>
+    <template>The causes of epilepsy can vary, including genetic factors, brain injuries, infections, and developmental disorders. Consult a neurologist for a thorough evaluation.</template>
+  </category>
+
+  <category>
+    <pattern>dietary recommendations for epilepsy</pattern>
+    <template>A ketogenic diet, high in fats and low in carbohydrates, has shown positive effects in some epilepsy cases. However, always consult with a healthcare professional before making significant dietary changes.</template>
+  </category>
+
+  <category>
+    <pattern>epilepsy and pregnancy</pattern>
+    <template>If you have epilepsy and are planning a pregnancy, it's crucial to work closely with your healthcare team to manage medications and ensure a healthy pregnancy. Do not make any changes without consulting your doctor.</template>
+  </category>
+
+  <!-- Home Cures for Common Viral Infections Categories -->
+  <category>
+    <pattern>home remedies for cough</pattern>
+    <template>For a persistent cough, try honey and warm water or a soothing herbal tea. If the cough persists, consult with a healthcare professional for proper diagnosis and treatment.</template>
+  </category>
+
+  <category>
+    <pattern>natural ways to boost immune system</pattern>
+    <template>Boost your immune system by maintaining a healthy diet rich in fruits and vegetables, getting regular exercise, staying hydrated, and ensuring sufficient sleep.</template>
+  </category>
+
+  <category>
+    <pattern>herbal remedies for colds</pattern>
+    <template>Herbal teas with ingredients like ginger, echinacea, and lemon may help alleviate symptoms of a cold. However, consult with a healthcare professional for persistent or severe symptoms.</template>
+  </category>
+
+  <!-- General Medical Information Categories -->
+  <category>
+    <pattern>how to choose a healthcare provider</pattern>
+    <template>When choosing a healthcare provider, consider factors such as their expertise, reputation, and compatibility with your needs. Don't hesitate to ask for recommendations from friends or family.</template>
+  </category>
+
+  <category>
+    <pattern>understanding blood pressure</pattern>
+    <template>Blood pressure is a measure of the force of blood against the walls of the arteries. Normal blood pressure is crucial for overall health. Consult with a healthcare professional for personalized advice on maintaining a healthy blood pressure.</template>
+  </category>
+ <category>
+    <pattern>triggers of epileptic seizures</pattern>
+    <template>Common triggers for epileptic seizures include stress, lack of sleep, flashing lights, and certain medications. Identifying and managing triggers is essential for seizure control.</template>
+  </category>
+
+  <category>
+    <pattern>new advances in epilepsy treatment</pattern>
+    <template>Recent advances in epilepsy treatment include innovative medications, surgical options, and neurostimulation techniques. Consult a neurologist to explore the latest treatment options based on your specific case.</template>
+  </category>
+
+  <category>
+    <pattern>seizure first aid</pattern>
+    <template>If someone is having a seizure, stay with them, clear the area of any potential dangers, place them on their side to help with breathing, and time the duration. Do not restrain the person or put anything in their mouth. Seek medical attention if the seizure lasts more than five minutes or if another seizure follows immediately.</template>
+  </category>
+
+  <category>
+    <pattern>epilepsy and lifestyle</pattern>
+    <template>People with epilepsy can lead fulfilling lives by managing their condition. It's important to adhere to medications, get regular check-ups, maintain a healthy lifestyle, and communicate openly with healthcare providers about any concerns.</template>
+  </category>
+
+  <category>
+    <pattern>epilepsy in children</pattern>
+    <template>Epilepsy can affect children, and early diagnosis and treatment are crucial. Pediatric neurologists specialize in managing epilepsy in children and can provide appropriate guidance and support for both the child and their family.</template>
+  </category>
+
+  <category>
+    <pattern>cognitive effects of epilepsy</pattern>
+    <template>Some individuals with epilepsy may experience cognitive challenges, such as memory or concentration issues. Working with healthcare professionals, including neurologists and neuropsychologists, can help address and manage these cognitive effects.</template>
+  </category>
+     <category>
+    <pattern>epilepsy and medication side effects</pattern>
+    <template>Antiepileptic medications can have side effects. It's crucial to communicate openly with your healthcare provider about any side effects you may be experiencing. They can adjust the medication or suggest alternative options if necessary.</template>
+  </category>
+
+  <category>
+    <pattern>seizure diary importance</pattern>
+    <template>Keeping a seizure diary is helpful for both individuals with epilepsy and their healthcare providers. It allows tracking of seizure frequency, triggers, and patterns, aiding in better management and treatment adjustments.</template>
+  </category>
+
+  <category>
+    <pattern>epilepsy and employment</pattern>
+    <template>Many individuals with epilepsy can pursue successful careers. It's essential to know your rights, communicate with employers about your condition, and create a supportive work environment. Legal protections may be available depending on your location.</template>
+  </category>
+
+  <category>
+    <pattern>ketogenic diet for epilepsy</pattern>
+    <template>The ketogenic diet, high in fats and low in carbohydrates, has been used as a complementary treatment for some people with epilepsy, especially children. However, it should be implemented under the guidance of a healthcare professional.</template>
+  </category>
+
+  <category>
+    <pattern>non-epileptic seizures</pattern>
+    <template>Not all seizures are related to epilepsy. Non-epileptic seizures may have other causes, such as psychological factors. Proper diagnosis by a healthcare professional is crucial to determine the appropriate treatment approach.</template>
+  </category>
+
+  <category>
+    <pattern>epilepsy support groups</pattern>
+    <template>Joining epilepsy support groups or online communities can provide valuable emotional support and shared experiences. Connecting with others who understand the challenges can be beneficial for individuals with epilepsy and their families.</template>
+  </category>
+  <category>
+    <pattern>how is epilepsy treated</pattern>
+    <template>Epilepsy is commonly treated with antiepileptic medications. Finding the right medication and dosage often requires consultation with a neurologist, who will monitor your response and adjust the treatment plan accordingly.</template>
+  </category>
+     <category>
+    <pattern>considering epilepsy surgery</pattern>
+    <template>Surgery may be considered for individuals with epilepsy who don't respond well to medications. This option involves removing or disconnecting the part of the brain causing seizures. It's a complex decision and requires thorough evaluation by a neurosurgeon and neurologist.</template>
+  </category>
+  <category>
+    <pattern>lifestyle changes for epilepsy</pattern>
+    <template>Managing stress, getting sufficient sleep, and maintaining a healthy lifestyle can contribute to seizure control. Identifying and avoiding potential triggers, when possible, is also an essential aspect of epilepsy management.</template>
+  </category>
+  <category>
+    <pattern>how long does epilepsy treatment take</pattern>
+    <template>The duration of epilepsy treatment varies among individuals. Some may achieve effective seizure control relatively quickly with the right medication, while others may require ongoing adjustments to find the most suitable treatment plan.</template>
+  </category>
+
+  <category>
+    <pattern>managing epilepsy with lifestyle changes</pattern>
+    <template>Seizure management through lifestyle changes, such as stress management and adopting a ketogenic diet, is an ongoing process. Results can vary, and individuals may experience improvements over time with consistent efforts.</template>
+  </category>
+
+  <category>
+    <pattern>surgical options for epilepsy</pattern>
+    <template>For some individuals with epilepsy, surgical options may be considered. The timeline for surgical interventions varies, and thorough evaluation and discussions with healthcare professionals are necessary to determine the appropriateness and potential benefits.</template>
+  </category>
+
+  <category>
+    <pattern>ongoing monitoring of epilepsy</pattern>
+    <template>Managing epilepsy often involves ongoing monitoring by healthcare professionals, especially neurologists or epileptologists. Regular check-ups, adjustments to treatment plans, and addressing any concerns are essential for effective seizure control and overall well-being.</template>
+  </category>
+
+  <category>
+
+    <pattern>expectations for epilepsy treatment</pattern>
+    <template>Expectations for epilepsy treatment should be individualized. While some individuals may experience long periods without seizures, it's important to note that epilepsy is often managed rather than completely cured. The goal is to improve the quality of life by minimizing seizure frequency and managing potential side effects of treatment.</template>
+  </category>
+    <category>
+    <pattern>what are common symptoms of epilepsy</pattern>
+    <template>Common symptoms of epilepsy include sudden, unprovoked seizures. Seizures can manifest in various ways, such as convulsions, staring spells, or subtle movements. It's essential to consult with a healthcare professional for a proper diagnosis and evaluation of symptoms.</template>
+  </category>
+
+  <category>
+    <pattern>different types of seizures</pattern>
+    <template>Epileptic seizures can present in different ways, depending on the type of epilepsy. Some individuals experience generalized seizures affecting the entire brain, while others may have focal seizures originating in a specific part of the brain. Symptoms can range from convulsions to altered consciousness or unusual sensations.</template>
+  </category>
+
+  <category>
+    <pattern>aura and epilepsy</pattern>
+    <template>Some individuals with epilepsy experience an "aura" before a seizure, which is a warning sign or sensation that precedes the actual seizure. Auras can manifest as visual disturbances, strange smells, or other sensory changes. Recognizing and noting auras can be valuable for seizure management.</template>
+  </category>
+
+  <category>
+    <pattern>seizures during sleep</pattern>
+    <template>Seizures can occur during sleep, and some individuals may not be aware of their seizures. Nighttime seizures can manifest as unusual movements, sounds, or disturbances in sleep patterns. Monitoring and discussing any suspicious symptoms with a healthcare professional are essential.</template>
+  </category>
+
+  <category>
+    <pattern>temporary loss of awareness</pattern>
+    <template>For some individuals with epilepsy, seizures may involve a temporary loss of awareness or consciousness. This can present as staring spells or moments of confusion. Seeking medical advice for proper diagnosis and management is crucial for individuals experiencing these symptoms.</template>
+  </category>
+    <category>
+    <pattern>how to prevent the common cold</pattern>
+    <template>To prevent the common cold, practice good hand hygiene by washing hands regularly, avoid close contact with sick individuals, and maintain a healthy lifestyle with sufficient sleep and proper nutrition.</template>
+  </category>
+
+  <category>
+    <pattern>ways to relieve stress</pattern>
+    <template>Relieving stress is important for overall well-being. Consider activities such as deep breathing, meditation, exercise, and spending time in nature to help reduce stress levels.</template>
+  </category>
+
+  <category>
+    <pattern>benefits of regular exercise</pattern>
+    <template>Regular exercise offers numerous health benefits, including improved cardiovascular health, weight management, and enhanced mood. Aim for at least 150 minutes of moderate-intensity exercise per week.</template>
+  </category>
+
+  <category>
+    <pattern>how to get a good night's sleep</pattern>
+    <template>To improve sleep quality, maintain a consistent sleep schedule, create a relaxing bedtime routine, and ensure your sleep environment is comfortable and conducive to rest.</template>
+  </category>
+
+  <category>
+    <pattern>importance of staying hydrated</pattern>
+    <template>Staying hydrated is crucial for overall health. Aim to drink an adequate amount of water daily to support bodily functions, maintain energy levels, and promote healthy skin.</template>
+  </category>
+
+  <category>
+    <pattern>good nutritional habits</pattern>
+    <template>Adopting good nutritional habits involves consuming a balanced diet rich in fruits, vegetables, lean proteins, and whole grains. Limit processed foods, added sugars, and excessive salt intake for optimal health.</template>
+  </category>
+
+  <category>
+    <pattern>how to boost immune system</pattern>
+    <template>Boosting the immune system involves maintaining a healthy lifestyle with proper nutrition, regular exercise, adequate sleep, and managing stress. Consider incorporating immune-boosting foods and supplements under the guidance of a healthcare professional.</template>
+  </category>
+
+
+</aiml>

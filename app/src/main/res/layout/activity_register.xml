@@ -1,0 +1,180 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:fillViewport="true"
+    android:background="@drawable/s1"
+    tools:context=".Activities.RegisterActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:gravity="center_horizontal"
+      android:padding="16dp">
+
+    <!-- Your existing layout elements -->
+
+    <!-- Profile Picture for Face Image -->
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_border"
+        android:contentDescription="Profile Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/usericon"
+        android:layout_marginBottom="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/upload_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Face Image"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF5722"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_marginBottom="24dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Name Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Full Name"
+          android:textColor="@android:color/black"
+          android:textSize="22sp"
+          android:background="@drawable/input_field_background"
+          android:padding="12dp"
+          tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Age Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/age"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Age"
+          android:inputType="number"
+          android:textColor="@android:color/black"
+          android:textSize="22sp"
+          android:background="@drawable/input_field_background"
+          android:padding="12dp"
+          tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- City Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/city"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="City"
+          android:textColor="@android:color/black"
+          android:textSize="22sp"
+          android:background="@drawable/input_field_background"
+          android:padding="12dp"
+          tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Email Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/email"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Email"
+          android:inputType="textEmailAddress"
+          android:textColor="@android:color/black"
+          android:textSize="22sp"
+          android:background="@drawable/input_field_background"
+          android:padding="12dp"
+          tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <!-- Mobile Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/number"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Mobile no."
+          android:inputType="phone"
+          android:textColor="@android:color/black"
+          android:textSize="22sp"
+          android:background="@drawable/input_field_background"
+          android:padding="12dp"
+          tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:passwordToggleEnabled="true">
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/password"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Password"
+          android:inputType="textPassword"
+          android:textColor="@android:color/black"
+          android:textSize="22sp"
+          android:background="@drawable/input_field_background"
+          android:padding="12dp"
+          tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="343dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/register_button_background"
+        android:backgroundTint="#FF5722"
+        android:padding="12dp"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        tools:ignore="HardcodedText" />
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminate="true" />
+  </LinearLayout>
+</ScrollView>

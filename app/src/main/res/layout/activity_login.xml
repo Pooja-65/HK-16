@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/s1"
+    android:padding="16dp"
+    tools:context=".Activities.LoginActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:orientation="vertical"
+      android:padding="16dp">
+
+    <!-- FrameLayout to toggle between logo and Lottie animation -->
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="24dp">
+
+      <!-- Logo Image -->
+      <ImageView
+          android:id="@+id/logo_image"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="fitCenter"
+          app:srcCompat="@drawable/logo" />
+
+      <!-- Lottie Animation -->
+      <com.airbnb.lottie.LottieAnimationView
+          android:id="@+id/lottie_animation"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:visibility="gone"
+          app:lottie_autoPlay="false"
+          app:lottie_loop="false"
+          app:lottie_rawRes="@raw/login" />
+    </FrameLayout>
+
+    <!-- Email or Mobile Number Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:boxStrokeColor="#FF5722"
+        app:hintTextColor="@color/black">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/input_field"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/input_field_background"
+          android:hint="Email or Mobile Number"
+          android:inputType="text"
+          android:padding="12dp"
+          android:textColor="@android:color/black"
+          android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        app:boxStrokeColor="#FF5722"
+        app:hintTextColor="@color/black"
+        app:passwordToggleEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/password"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/input_field_background"
+          android:hint="Password"
+          android:inputType="textPassword"
+          android:padding="12dp"
+          android:textColor="@android:color/black"
+          android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Remember Me Checkbox -->
+    <CheckBox
+        android:id="@+id/rememberMeCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-90dp"
+        android:layout_marginTop="10dp"
+        android:text="Remember Me"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/button_background"
+        android:elevation="4dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Or Separator -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:text="Or"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <!-- Sign Up Text -->
+    <TextView
+        android:id="@+id/sign_up_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="20dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+  </LinearLayout>
+
+</ScrollView>
