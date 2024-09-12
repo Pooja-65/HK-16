@@ -1,13 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.EpiNect" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Base application theme -->
+    <style name="Theme.EpiNect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#F94C10</item>
-
-
-
+        <item name="colorPrimaryVariant">#F94C10</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#F94C10</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="colorOnBackground">#000000</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#000000</item>
     </style>
 
-    <style name="Theme.EpiNect" parent="Base.Theme.EpiNect" />
+    <!-- Custom theme for the MaterialDatePicker -->
+    <style name="CalendarTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="colorPrimary">#F94C10</item>
+        <item name="colorAccent">#F94C10</item>
+        <item name="materialCalendarTheme">@style/CalendarTheme</item>
+    </style>
 </resources>

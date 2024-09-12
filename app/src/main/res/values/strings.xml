@@ -6,5 +6,6 @@
     <string name="delete_button_description">Delete Instruction</string>
     <string name="make_Post">Post Your Thoughts</string>
     <string name="choose_image"><u>Upload Image</u></string>
+    <string name="delete" />
 
 </resources>

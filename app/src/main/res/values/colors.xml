@@ -10,6 +10,10 @@
     <color name="normal_color">#FF0000</color> <!-- Example color for normal state -->
     <color name="pressed_color">#00FF00</color> <!-- Example color for pressed state -->
     <color name="selected_color">#0000FF</color> <!-- Example color for selected state -->
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="purple_200">#BB86FC</color>
 
         <color name="bottom_navigation_icon_color">#F5F5F5</color>
         <color name="bottom_navigation_text_color">#F5F5F5</color>

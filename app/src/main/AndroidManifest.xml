@@ -100,6 +100,7 @@
         <activity
             android:name=".Activities.StartScreen.Index"
             android:exported="true" />
+        <activity android:name=".Activities.calenderData.CalenderActivity" />
         <activity
             android:name="com.example.epinect.Activities.SplashScreen.SplashScreen"
             android:exported="true">
@@ -127,8 +128,9 @@
         <activity
             android:name=".Dashboard"
             android:exported="true" />
-<!--        <activity android:name=".Activities.calenderData.calender">-->
-<!--        </activity>-->
+        <activity android:name=".Activities.calenderData.CalenderActivity"
+            tools:ignore="DuplicateActivity">
+        </activity>
         <activity
             android:name=".Activities.Emergencysos.SmsBtnInst"
             android:exported="true"
@@ -166,6 +168,7 @@
         <activity android:name=".Activities.Reminder.ReminderMain" />
         <activity android:name=".Activities.Reminder.AddedReminders" />
         <activity android:name=".Activities.Post.MakeRequestActivity" />
+
 
     </application>
 

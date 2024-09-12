@@ -23,6 +23,7 @@ import com.example.epinect.Activities.HealthTracker.healthtracker;
 import com.example.epinect.Activities.Medibot.chatbot;
 import com.example.epinect.Activities.Post.Post;
 import com.example.epinect.Activities.Reminder.ReminderMain;
+import com.example.epinect.Activities.calenderData.CalenderActivity;
 import com.example.epinect.Activities.location.location;
 import com.example.epinect.Activities.weather.WeatherActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -168,14 +169,18 @@ public class Dashboard extends AppCompatActivity {
                 vibrate();
             }
         });
-//        recordCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Handle click for Magnifying Glass CardView
-//                openActivity(calender.class);
-//                vibrate();
-//            }
-//        });
+
+        CardView seizureeventCard = findViewById(R.id.seizureeventCard);
+        seizureeventCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the activity that contains the calendar (activity_main.xml)
+                Intent intent = new Intent(Dashboard.this, CalenderActivity.class); // Replace CalendarActivity with your calendar activity class
+                startActivity(intent);
+            }
+        });
+
+
         dataCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

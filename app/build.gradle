@@ -63,9 +63,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:$googlePlayVersion"
     implementation "com.google.android.gms:play-services-location:$googlePlayVersion"
     implementation 'com.google.android.gms:play-services-location:21.0.1'
-//    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.8.0"
-//    implementation "org.permissionsdispatcher:permissionsdispatcher:4.8.0"
- implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 
     implementation "androidx.appcompat:appcompat:$supportLibVersion"
@@ -87,9 +85,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     implementation 'com.github.amitshekhariitbhu.Fast-Android-Networking:android-networking:1.0.4'
     implementation 'androidx.preference:preference:1.2.1'
-//    implementation 'com.naishadhparmar.zcustomcalendar:zcustomcalendar:1.0.1'
-//    implementation 'com.github.naishadhparmar:zcustomcalendar:-SNAPSHOT'
-
     implementation 'com.github.npanigrahy:Custom-Calendar-View:v1.1'
 
     implementation 'com.google.firebase:firebase-database:20.0.5'
@@ -103,10 +98,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.airbnb.android:lottie:6.0.0'
     implementation 'com.google.firebase:firebase-appcheck-playintegrity:18.0.0'
-//    // Permissions Dispatcher (if needed)
-//    implementation "org.permissionsdispatcher:permissionsdispatcher:$permissionDispatcherVersion"
-//    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:$permissionDispatcherVersion"
-     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.firebase:firebase-database:20.3.0' // Add Firebase Realtime Database SDK
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -118,4 +110,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     // Miscellaneous
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.material:material:1.12.0'
+
 }
