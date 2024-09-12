@@ -1,0 +1,18 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <!-- Button when pressed -->
+        <shape>
+            <solid android:color="#FF9800" /> <!-- Darker green when pressed -->
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- White border -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item>
+        <!-- Default button state -->
+        <shape>
+            <solid android:color="#FF5722" /> <!-- Normal green color -->
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- White border -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>

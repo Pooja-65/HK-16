@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="colorPrimary">#E4473B</color>
+    <color name="colorPrimaryDark">#202f65</color>
+    <color name="colorAccent">#202f65</color>
+    <color name="white">#ffffff</color>
+    <color name="lightGray">#F5F5F5</color>
+    <color name="colorgreen">#8FCC48</color>
+    <color name="normal_color">#FF0000</color> <!-- Example color for normal state -->
+    <color name="pressed_color">#00FF00</color> <!-- Example color for pressed state -->
+    <color name="selected_color">#0000FF</color> <!-- Example color for selected state -->
+
+        <color name="bottom_navigation_icon_color">#F5F5F5</color>
+        <color name="bottom_navigation_text_color">#F5F5F5</color>
+
+</resources>

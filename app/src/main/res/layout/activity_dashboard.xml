@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background_dash"
+    tools:context=".Dashboard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_info_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        app:cardElevation="60dp"
+        android:background="@drawable/light_black_border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Greeting Text -->
+            <TextView
+                android:id="@+id/greeting_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <!-- Profile Image and Info Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Profile Image -->
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="83dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="17dp"
+                    android:background="@drawable/rounded_border"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile" />
+
+                <!-- User Info -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/user_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/user_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Scrollable Container for Features -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_info_card"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:fadeScrollbars="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/features_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@android:color/transparent">
+
+        <!-- GridLayout for Features (2 features per row) -->
+            <GridLayout
+                android:id="@+id/features_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!-- Feature 1: Weather -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/weather_Card"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/weather" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weather Alert"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 2: Emergency SOS -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/emergencyCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/sos"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Emergency SOS"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 3: Epilepsy Guide -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/guideCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/steps" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Epilepsy Guide"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 4: Medicine Reminder -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/scheduleCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/reminder"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medicine Reminder"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 5: Ask Epibot -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/askCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/ask"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ask Epibot"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 6: Epi-Post -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/healthCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/post"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Epi-Post"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 7: Health-Hub Locator -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/locationCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/location"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Health-Hub Locator"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 8: Seizure Record -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/seizureeventCard"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/record"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Seizure Record"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Feature 9: User Health Data -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/health_Card"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Lottie Animation View -->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            app:lottie_rawRes="@raw/data"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User Health Data"
+                            android:textSize="16sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+
+</RelativeLayout>

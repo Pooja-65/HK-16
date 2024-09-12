@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EpiNect</string>
+    <string name="menu_item_sign_out">Sign Out</string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="google_map_key">AIzaSyA8MGaKd2HoieYMtbZ6H3ApZNv0c0R5QM0</string>
+    <string name="delete_button_description">Delete Instruction</string>
+    <string name="make_Post">Post Your Thoughts</string>
+    <string name="choose_image"><u>Upload Image</u></string>
+
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "876496498232",
+    "firebase_url": "https://epinect-be1e9-default-rtdb.firebaseio.com",
+    "project_id": "epinect-be1e9",
+    "storage_bucket": "epinect-be1e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876496498232:android:f423c80423738a85ffc0cd",
+        "android_client_info": {
+          "package_name": "com.example.epinect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRMVKQDncX_OwDiPkyIb_pflP7yY9vqIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
