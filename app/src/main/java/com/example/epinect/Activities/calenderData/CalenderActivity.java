@@ -30,13 +30,7 @@ public class CalenderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Temporary clear SharedPreferences to test
-        clearSharedPreferences();
-
-        // Load selected dates after clearing SharedPreferences
-        loadSelectedDates();
-
-        // Setup RecyclerView or other UI elements
+        // Setup RecyclerView
         setupRecyclerView();
 
         // Setup DatePicker button
@@ -44,25 +38,30 @@ public class CalenderActivity extends AppCompatActivity {
         datePickerButton.setOnClickListener(v -> showDatePickerDialog());
     }
 
-    private void clearSharedPreferences() {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        sharedPreferences.edit().clear().apply();
-        Log.d(TAG, "SharedPreferences cleared");
+    // Move loadSelectedDates() to onResume() to ensure dates are reloaded every time the activity is resumed
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Load previously selected dates from SharedPreferences every time the activity comes into view
+        loadSelectedDates();
     }
 
+    // Load previously selected dates from SharedPreferences
     private void loadSelectedDates() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         Set<String> defaultDates = new HashSet<>();
         Set<String> selectedDates = sharedPreferences.getStringSet(KEY_SELECTED_DATES, defaultDates);
 
-        // Update RecyclerView data
+        // If there are previously saved dates, update the RecyclerView data
         if (dateAdapter != null) {
             dateAdapter.updateDates(new ArrayList<>(selectedDates));
+            Log.d(TAG, "Loaded dates from SharedPreferences: " + selectedDates.toString());
         }
     }
 
+    // Setup the RecyclerView to display selected dates
     private void setupRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.recycler_view_dates); // Corrected ID
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_dates); // Make sure this is your RecyclerView ID
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize adapter with empty data and delete listener
@@ -72,6 +71,7 @@ public class CalenderActivity extends AppCompatActivity {
             if (position >= 0 && position < dates.size()) {
                 dates.remove(position);
                 dateAdapter.notifyItemRemoved(position);
+
                 // Save updated dates to SharedPreferences
                 saveSelectedDates(new HashSet<>(dates));
             }
@@ -80,6 +80,7 @@ public class CalenderActivity extends AppCompatActivity {
         recyclerView.setAdapter(dateAdapter);
     }
 
+    // Save selected dates to SharedPreferences
     private void saveSelectedDates(Set<String> dates) {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -87,6 +88,7 @@ public class CalenderActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    // Show DatePickerDialog and add selected date
     private void showDatePickerDialog() {
         // Get current date
         Calendar calendar = Calendar.getInstance();
@@ -99,7 +101,7 @@ public class CalenderActivity extends AppCompatActivity {
                 this,
                 (view, selectedYear, selectedMonth, selectedDay) -> {
                     // Handle selected date
-                    String selectedDate = String.format("%d-%d-%d", selectedYear, selectedMonth + 1, selectedDay);
+                    String selectedDate = String.format("%d-%d-%d", selectedDay, selectedMonth + 1, selectedYear);
                     addDateToList(selectedDate);
                 },
                 year, month, day
@@ -109,6 +111,7 @@ public class CalenderActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    // Add the selected date to the list and save it
     private void addDateToList(String date) {
         List<String> dates = dateAdapter.getDates();
         if (!dates.contains(date)) {
